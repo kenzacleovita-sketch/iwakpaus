@@ -1040,7 +1040,7 @@
 
 
         let message =
-            "Halo Toko Iwak Paus! Saya ingin melakukan checkout:";
+            "Halo Iwak Paus! Saya ingin melakukan checkout:%0A%0A";
 
 
         let total = 0;
@@ -1055,13 +1055,13 @@
 
 
             message +=
-                ` ${item.name} x${item.qty} = Rp ${subtotal.toLocaleString("id-ID")}%0A`;
+                `🐋 ${item.name} x${item.qty} = Rp ${subtotal.toLocaleString("id-ID")}%0A`;
 
         });
 
 
         message +=
-            `Total: Rp ${total.toLocaleString("id-ID")}`;
+            `%0A💰 Total: Rp ${total.toLocaleString("id-ID")}`;
 
 
         window.open(
@@ -1077,4 +1077,4 @@
 </script>
 
 </body>
-                    </html>
+    </html>
