@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>IWAK PAUS | Ocean Collection</title>
+    <title>Iwak Paus — Ocean Store</title>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         html {
@@ -20,1092 +19,1062 @@
         }
 
         body {
-            font-family: 'DM Sans', sans-serif;
-            background: #021522;
-            color: white;
-            overflow-x: hidden;
+            background: #f1fbff;
+            color: #083b4c;
         }
 
-        /* =========================
-           BACKGROUND
-        ========================= */
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background:
-                radial-gradient(circle at 10% 20%, rgba(42, 190, 230, .12), transparent 30%),
-                radial-gradient(circle at 90% 70%, rgba(50, 130, 255, .10), transparent 30%);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
+        /* NAVBAR */
         nav {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 1150px;
-
-            padding: 14px 22px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
 
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
 
-            background: rgba(4, 35, 54, .65);
-            backdrop-filter: blur(18px);
+            padding: 18px 7%;
 
-            border: 1px solid rgba(255,255,255,.10);
-            border-radius: 50px;
+            background: rgba(4, 54, 70, 0.92);
+            backdrop-filter: blur(15px);
 
-            z-index: 999;
-
-            box-shadow:
-                0 10px 40px rgba(0,0,0,.25);
+            color: white;
         }
 
         .logo {
-            font-size: 19px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: #9cecff;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
         }
 
         .logo span {
-            color: white;
+            color: #69d8f5;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 25px;
         }
 
         nav a {
-            color: #c6e8f1;
+            color: white;
             text-decoration: none;
             font-size: 14px;
             transition: .3s;
         }
 
         nav a:hover {
-            color: #70e6ff;
+            color: #69d8f5;
         }
 
+        .cart-btn {
+            border: none;
+            background: #69d8f5;
+            color: #063b4b;
 
-        /* =========================
-           HERO
-        ========================= */
+            padding: 10px 17px;
+            border-radius: 30px;
 
+            cursor: pointer;
+            font-weight: bold;
+
+            transition: .3s;
+        }
+
+        .cart-btn:hover {
+            transform: translateY(-2px);
+            background: #9de9fa;
+        }
+
+        /* HERO */
         .hero {
-            min-height: 100vh;
-
-            position: relative;
+            min-height: 560px;
 
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
 
-            text-align: center;
-
-            padding: 120px 20px 80px;
+            padding: 70px 8%;
 
             background:
-                linear-gradient(
-                    to bottom,
-                    rgba(2,21,34,.15),
-                    #021522 95%
-                ),
-                url("https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=2000&q=90");
+                radial-gradient(circle at 80% 30%, rgba(100,220,250,.25), transparent 35%),
+                linear-gradient(135deg, #04364a, #08728d, #0b9fbd);
 
-            background-size: cover;
-            background-position: center;
+            color: white;
+            overflow: hidden;
         }
 
-        .hero-content {
-            max-width: 900px;
-            animation: fadeUp 1.2s ease;
+        .hero-text {
+            max-width: 580px;
         }
 
-        .small-title {
-            display: inline-block;
-
-            padding: 8px 16px;
-
-            border: 1px solid rgba(150,240,255,.25);
-            border-radius: 50px;
-
-            background: rgba(100,220,255,.08);
-
-            color: #9defff;
-            font-size: 12px;
+        .hero-text small {
+            color: #a8efff;
             letter-spacing: 3px;
-            text-transform: uppercase;
-
-            margin-bottom: 25px;
+            font-weight: bold;
         }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-
-            font-size: clamp(55px, 10vw, 110px);
-
+        .hero-text h1 {
+            font-size: clamp(45px, 7vw, 80px);
             line-height: .95;
-
-            margin-bottom: 25px;
-
-            text-shadow:
-                0 0 30px rgba(82,218,255,.25);
+            margin: 18px 0;
         }
 
-        .hero h1 span {
-            color: #73e4ff;
+        .hero-text h1 span {
+            color: #7ee8ff;
         }
 
-        .hero p {
-            max-width: 650px;
-            margin: auto;
-
-            color: #c4e4ec;
-
-            line-height: 1.8;
-            font-size: 16px;
+        .hero-text p {
+            color: #d9f7ff;
+            line-height: 1.7;
+            margin-bottom: 28px;
         }
 
-        .hero-buttons {
-            margin-top: 35px;
-
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
+        .hero-btn {
+            display: inline-block;
             padding: 14px 25px;
+            border-radius: 30px;
 
-            border-radius: 50px;
+            background: white;
+            color: #056078;
 
             text-decoration: none;
+            font-weight: bold;
 
-            font-size: 14px;
-            font-weight: 600;
-
-            transition: .35s;
+            transition: .3s;
         }
 
-        .btn-primary {
-            background: #70e4ff;
-            color: #032031;
-
-            box-shadow:
-                0 0 30px rgba(112,228,255,.20);
-        }
-
-        .btn-primary:hover {
+        .hero-btn:hover {
             transform: translateY(-4px);
-            box-shadow:
-                0 12px 35px rgba(112,228,255,.30);
+            box-shadow: 0 10px 30px rgba(0,0,0,.2);
         }
 
-        .btn-outline {
-            border: 1px solid rgba(255,255,255,.2);
-            background: rgba(255,255,255,.05);
-            color: white;
-            backdrop-filter: blur(10px);
+        .whale {
+            font-size: 180px;
+            animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0 20px 25px rgba(0,0,0,.2));
         }
 
-        .btn-outline:hover {
-            background: rgba(255,255,255,.1);
-            transform: translateY(-4px);
+        @keyframes float {
+            0%,100% {
+                transform: translateY(0) rotate(-3deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(3deg);
+            }
         }
 
-
-        /* =========================
-           BUBBLES
-        ========================= */
-
-        .bubble {
-            position: absolute;
-
-            width: 8px;
-            height: 8px;
-
-            border-radius: 50%;
-
-            background: rgba(160,240,255,.35);
-
-            animation: bubble 6s infinite ease-in;
-        }
-
-        .b1 {
-            left: 15%;
-            bottom: 10%;
-        }
-
-        .b2 {
-            left: 75%;
-            bottom: 15%;
-            width: 5px;
-            height: 5px;
-            animation-delay: 2s;
-        }
-
-        .b3 {
-            left: 85%;
-            bottom: 30%;
-            width: 11px;
-            height: 11px;
-            animation-delay: 4s;
-        }
-
-
-        /* =========================
-           SECTION
-        ========================= */
-
+        /* SECTION */
         section {
-            padding: 110px 7%;
+            padding: 75px 8%;
         }
 
-        .section-heading {
+        .section-title {
             text-align: center;
-            margin-bottom: 55px;
+            margin-bottom: 45px;
         }
 
-        .section-heading .label {
-            color: #6ee2ff;
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+        .section-title h2 {
+            font-size: 38px;
+            color: #06495c;
         }
 
-        .section-heading h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(35px, 5vw, 55px);
-            margin: 10px 0;
+        .section-title p {
+            margin-top: 10px;
+            color: #638894;
         }
 
-        .section-heading p {
-            color: #86afbd;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           PRODUCT GRID
-        ========================= */
-
+        /* PRODUCT */
         .products {
-            max-width: 1200px;
-            margin: auto;
-
             display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(270px, 1fr));
-
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 25px;
         }
 
-
-        /* =========================
-           CARD
-        ========================= */
-
         .card {
-            position: relative;
-
+            background: rgba(255,255,255,.9);
+            border-radius: 24px;
             overflow: hidden;
 
-            border-radius: 25px;
+            box-shadow: 0 12px 35px rgba(7, 91, 116, .10);
 
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,.10),
-                    rgba(255,255,255,.035)
-                );
-
-            border: 1px solid rgba(255,255,255,.10);
-
-            backdrop-filter: blur(15px);
-
-            transition: .4s;
-
-            box-shadow:
-                0 20px 50px rgba(0,0,0,.15);
+            transition: .35s;
+            border: 1px solid #d9f3fa;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-
-            border-color:
-                rgba(104,225,255,.4);
-
-            box-shadow:
-                0 25px 60px rgba(0,0,0,.3),
-                0 0 30px rgba(76,211,245,.08);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(7, 91, 116, .18);
         }
 
-        .image-box {
-            position: relative;
-            height: 230px;
+        .card-img {
+            height: 210px;
             overflow: hidden;
+            background: #d9f7ff;
         }
 
-        .image-box img {
+        .card-img img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
-
-            transition: .6s;
+            transition: .4s;
         }
 
         .card:hover img {
             transform: scale(1.07);
         }
 
-        .tag {
-            position: absolute;
-
-            top: 15px;
-            left: 15px;
-
-            padding: 7px 12px;
-
-            border-radius: 50px;
-
-            background: rgba(1,25,39,.65);
-            backdrop-filter: blur(10px);
-
-            color: #9beeff;
-
-            font-size: 11px;
-            font-weight: 600;
-
-            border: 1px solid rgba(255,255,255,.1);
+        .card-content {
+            padding: 22px;
         }
 
-        .card-content {
-            padding: 24px;
+        .tag {
+            display: inline-block;
+
+            background: #e0f8ff;
+            color: #08718c;
+
+            padding: 5px 10px;
+            border-radius: 20px;
+
+            font-size: 11px;
+            font-weight: bold;
         }
 
         .card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 25px;
-            margin-bottom: 7px;
+            margin: 13px 0 7px;
+            color: #073f50;
         }
 
-        .latin {
-            font-size: 11px;
-            color: #6fc9dd;
-            font-style: italic;
-            margin-bottom: 12px;
-        }
-
-        .card-description {
-            color: #9ebec8;
+        .card p {
+            color: #71909a;
             font-size: 13px;
-            line-height: 1.7;
-            min-height: 65px;
+            line-height: 1.6;
         }
 
-        .card-bottom {
-            margin-top: 20px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .price {
+            color: #087b99;
+            font-size: 20px;
+            font-weight: 800;
+            margin: 17px 0;
         }
 
-        .price small {
-            display: block;
-            color: #7095a1;
-            font-size: 10px;
-            margin-bottom: 3px;
-        }
+        .add-btn {
+            width: 100%;
+            padding: 12px;
 
-        .price strong {
-            color: #7be5ff;
-            font-size: 18px;
-        }
+            border: none;
+            border-radius: 13px;
 
-        .wa {
-            padding: 10px 15px;
-
-            border-radius: 12px;
-
-            background: #0b6f91;
-
+            background: #075b72;
             color: white;
 
-            text-decoration: none;
-
-            font-size: 12px;
-            font-weight: 600;
+            font-weight: bold;
+            cursor: pointer;
 
             transition: .3s;
         }
 
-        .wa:hover {
-            background: #0d99c4;
-            transform: scale(1.04);
+        .add-btn:hover {
+            background: #0a8baa;
         }
 
-
-        /* =========================
-           INFO BOX
-        ========================= */
-
-        .info-section {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .info-box {
-            position: relative;
-            overflow: hidden;
-
-            padding: 60px 40px;
+        /* INFO */
+        .info {
+            background: linear-gradient(135deg, #04384c, #075f76);
+            color: white;
 
             border-radius: 35px;
 
-            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(17,83,111,.5),
-                    rgba(3,35,55,.7)
-                );
-
-            border: 1px solid rgba(115,225,255,.15);
-
-            box-shadow:
-                0 30px 80px rgba(0,0,0,.2);
+            gap: 30px;
+            padding: 45px;
         }
 
-        .info-box::before {
-            content: "";
-            position: absolute;
-
-            width: 250px;
-            height: 250px;
-
-            border-radius: 50%;
-
-            background: rgba(84,215,255,.08);
-
-            filter: blur(10px);
-
-            top: -100px;
-            right: -70px;
-        }
-
-        .info-box h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 40px;
-            margin-bottom: 15px;
+        .info-box h3 {
+            color: #75e4fc;
+            margin-bottom: 12px;
         }
 
         .info-box p {
-            max-width: 720px;
-            margin: auto;
-
-            color: #acd1da;
-
+            color: #d1edf3;
+            line-height: 1.7;
             font-size: 14px;
-            line-height: 1.9;
         }
 
+        /* CART */
+        .cart {
+            position: fixed;
+            right: -420px;
+            top: 0;
 
-        /* =========================
-           FOOTER
-        ========================= */
+            width: min(390px, 90%);
+            height: 100vh;
 
-        footer {
-            padding: 45px 20px;
+            background: white;
+
+            z-index: 2000;
+
+            padding: 25px;
+
+            box-shadow: -10px 0 40px rgba(0,0,0,.15);
+
+            transition: .4s;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart.active {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 20px;
+        }
+
+        .close {
+            border: none;
+            background: #e8f8fc;
+
+            width: 35px;
+            height: 35px;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #cartItems {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 14px 0;
+
+            border-bottom: 1px solid #e3f1f5;
+        }
+
+        .cart-item h4 {
+            font-size: 14px;
+        }
+
+        .cart-item p {
+            color: #087b99;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .qty {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .qty button {
+            width: 27px;
+            height: 27px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: #dff7fc;
+            color: #075b72;
+
+            cursor: pointer;
+        }
+
+        .cart-bottom {
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 19px;
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .checkout {
+            width: 100%;
+
+            border: none;
+            padding: 14px;
+
+            border-radius: 14px;
+
+            background: #075b72;
+            color: white;
+
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .checkout:hover {
+            background: #0a8baa;
+        }
+
+        .wa {
+            display: block;
 
             text-align: center;
 
-            border-top:
-                1px solid rgba(255,255,255,.06);
+            margin-top: 10px;
+            padding: 12px;
 
-            background: #01101a;
+            border-radius: 14px;
 
-            color: #668b97;
+            background: #25D366;
+            color: white;
 
-            font-size: 12px;
-
-            line-height: 2;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        footer strong {
-            color: #8de9ff;
+        /* FOOTER */
+        footer {
+            background: #022c3b;
+            color: #9ecbd6;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            font-size: 13px;
         }
 
-
-        /* =========================
-           ANIMATION
-        ========================= */
-
-        @keyframes fadeUp {
-
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-        @keyframes bubble {
-
-            0% {
-                transform: translateY(0);
-                opacity: 0;
-            }
-
-            20% {
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(-250px);
-                opacity: 0;
-            }
-
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 650px) {
-
-            nav {
-                width: 94%;
-                top: 10px;
-            }
+        /* RESPONSIVE */
+        @media(max-width: 700px) {
 
             nav ul {
-                gap: 12px;
-            }
-
-            nav a {
-                font-size: 11px;
-            }
-
-            .logo {
-                font-size: 15px;
-            }
-
-            section {
-                padding: 80px 5%;
+                display: none;
             }
 
             .hero {
-                padding-left: 20px;
-                padding-right: 20px;
+                text-align: center;
+                flex-direction: column;
+                gap: 35px;
             }
 
-            .hero h1 {
-                font-size: 58px;
+            .whale {
+                font-size: 120px;
             }
 
-            .hero p {
-                font-size: 14px;
+            section {
+                padding: 55px 6%;
             }
 
-            .card-bottom {
-                align-items: flex-end;
+            .info {
+                padding: 30px;
             }
-
-            .info-box {
-                padding: 45px 25px;
-            }
-
-            .info-box h2 {
-                font-size: 32px;
-            }
-
         }
-
     </style>
 </head>
 
-
 <body>
 
+<!-- NAVBAR -->
+<nav>
 
-    <!-- =========================
-         NAVBAR
-    ========================= -->
+    <div class="logo">
+        Iwak<span>Paus.</span>
+    </div>
 
-    <nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#produk">Katalog</a></li>
+        <li><a href="#info">Info Toko</a></li>
+    </ul>
 
-        <div class="logo">
-            IWAK <span>PAUS</span> 🐋
-        </div>
+    <button class="cart-btn" onclick="openCart()">
+        🛒 Keranjang <span id="cartCount">0</span>
+    </button>
 
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#koleksi">Koleksi</a></li>
-            <li><a href="#tentang">Tentang</a></li>
-        </ul>
-
-    </nav>
-
-
-    <!-- =========================
-         HERO
-    ========================= -->
-
-    <section class="hero" id="home">
-
-        <div class="bubble b1"></div>
-        <div class="bubble b2"></div>
-        <div class="bubble b3"></div>
-
-        <div class="hero-content">
-
-            <div class="small-title">
-                ✦ Ocean Collection ✦
-            </div>
-
-            <h1>
-                Dive Into<br>
-                The <span>Blue</span>
-            </h1>
-
-            <p>
-                Jelajahi keindahan berbagai spesies paus
-                dari seluruh penjuru lautan melalui
-                katalog digital Iwak Paus.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#koleksi"
-                   class="btn btn-primary">
-                    Explore Collection ↓
-                </a>
-
-                <a href="#tentang"
-                   class="btn btn-outline">
-                    About Us
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
+</nav>
 
 
+<!-- HERO -->
+<section class="hero" id="home">
 
-    <!-- =========================
-         KOLEKSI
-    ========================= -->
+    <div class="hero-text">
 
-    <section id="koleksi">
+        <small>OCEAN • BLUE • COLLECTION</small>
 
-        <div class="section-heading">
+        <h1>
+            Explore the<br>
+            <span>Blue Ocean.</span>
+        </h1>
 
-            <div class="label">
-                Discover
-            </div>
+        <p>
+            Selamat datang di Iwak Paus, katalog bertema
+            kehidupan laut dengan desain modern dan aesthetic.
+        </p>
 
-            <h2>
-                Ocean Collection
-            </h2>
+        <a href="#produk" class="hero-btn">
+            Lihat Katalog →
+        </a>
 
-            <p>
-                Mengenal lebih dekat para penghuni
-                lautan yang menakjubkan.
-            </p>
+    </div>
 
-        </div>
+    <div class="whale">
+        🐋
+    </div>
 
-
-        <div class="products">
+</section>
 
 
-            <!-- CARD 1 -->
+<!-- PRODUK -->
+<section id="produk">
 
-            <div class="card">
+    <div class="section-title">
 
-                <div class="image-box">
+        <h2>Ocean Collection</h2>
 
-                    <img
-                    src="https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=900&q=85"
-                    alt="Paus Biru">
+        <p>
+            Pilih koleksi favoritmu dari katalog kami.
+        </p>
 
-                    <div class="tag">
-                        ✦ FEATURED
-                    </div>
+    </div>
 
-                </div>
 
-                <div class="card-content">
+    <div class="products">
 
-                    <h3>Paus Biru</h3>
 
-                    <div class="latin">
-                        Balaenoptera musculus
-                    </div>
+        <!-- PRODUK 1 -->
+        <div class="card">
 
-                    <p class="card-description">
-                        Salah satu hewan terbesar yang pernah
-                        hidup di bumi dengan tubuh yang luar biasa besar.
-                    </p>
+            <div class="card-img">
 
-                    <div class="card-bottom">
-
-                        <div class="price">
-                            <small>SIMULASI</small>
-                            <strong>Rp 999.000</strong>
-                        </div>
-
-                        <a
-                        href="https://wa.me/6287840112123?text=Halo%20Iwak%20Paus%2C%20saya%20ingin%20bertanya%20tentang%20Paus%20Biru."
-                        target="_blank"
-                        class="wa">
-                            💬 Tanya Info
-                        </a>
-
-                    </div>
-
-                </div>
+                <img
+                    src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=800&q=80"
+                    alt="Paus">
 
             </div>
 
+            <div class="card-content">
 
+                <span class="tag">
+                    POPULAR
+                </span>
 
-            <!-- CARD 2 -->
-
-            <div class="card">
-
-                <div class="image-box">
-
-                    <img
-                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=85"
-                    alt="Paus Bungkuk">
-
-                    <div class="tag">
-                        OCEAN LIFE
-                    </div>
-
-                </div>
-
-                <div class="card-content">
-
-                    <h3>Paus Bungkuk</h3>
-
-                    <div class="latin">
-                        Megaptera novaeangliae
-                    </div>
-
-                    <p class="card-description">
-                        Dikenal dengan sirip dadanya yang panjang
-                        serta perilakunya yang sering melompat di permukaan.
-                    </p>
-
-                    <div class="card-bottom">
-
-                        <div class="price">
-                            <small>SIMULASI</small>
-                            <strong>Rp 899.000</strong>
-                        </div>
-
-                        <a
-                        href="https://wa.me/6287840112123?text=Halo%20Iwak%20Paus%2C%20saya%20ingin%20bertanya%20tentang%20Paus%20Bungkuk."
-                        target="_blank"
-                        class="wa">
-                            💬 Tanya Info
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- CARD 3 -->
-
-            <div class="card">
-
-                <div class="image-box">
-
-                    <img
-                    src="https://images.unsplash.com/photo-1559825481-12a05cc00344?auto=format&fit=crop&w=900&q=85"
-                    alt="Paus Sperma">
-
-                    <div class="tag">
-                        DEEP SEA
-                    </div>
-
-                </div>
-
-                <div class="card-content">
-
-                    <h3>Paus Sperma</h3>
-
-                    <div class="latin">
-                        Physeter macrocephalus
-                    </div>
-
-                    <p class="card-description">
-                        Memiliki kepala besar yang khas dan dikenal
-                        sebagai salah satu penyelam laut terdalam.
-                    </p>
-
-                    <div class="card-bottom">
-
-                        <div class="price">
-                            <small>SIMULASI</small>
-                            <strong>Rp 799.000</strong>
-                        </div>
-
-                        <a
-                        href="https://wa.me/6287840112123?text=Halo%20Iwak%20Paus%2C%20saya%20ingin%20bertanya%20tentang%20Paus%20Sperma."
-                        target="_blank"
-                        class="wa">
-                            💬 Tanya Info
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- CARD 4 -->
-
-            <div class="card">
-
-                <div class="image-box">
-
-                    <img
-                    src="https://images.unsplash.com/photo-1607153333879-c174d265f1d2?auto=format&fit=crop&w=900&q=85"
-                    alt="Orca">
-
-                    <div class="tag">
-                        WILD OCEAN
-                    </div>
-
-                </div>
-
-                <div class="card-content">
-
-                    <h3>Orca</h3>
-
-                    <div class="latin">
-                        Orcinus orca
-                    </div>
-
-                    <p class="card-description">
-                        Predator laut yang sangat cerdas dengan
-                        pola hitam-putih yang menjadi ciri khasnya.
-                    </p>
-
-                    <div class="card-bottom">
-
-                        <div class="price">
-                            <small>SIMULASI</small>
-                            <strong>Rp 899.000</strong>
-                        </div>
-
-                        <a
-                        href="https://wa.me/6287840112123?text=Halo%20Iwak%20Paus%2C%20saya%20ingin%20bertanya%20tentang%20Orca."
-                        target="_blank"
-                        class="wa">
-                            💬 Tanya Info
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- CARD 5 -->
-
-            <div class="card">
-
-                <div class="image-box">
-
-                    <img
-                    src="https://images.unsplash.com/photo-1564518098555-28c0f9c5c0aa?auto=format&fit=crop&w=900&q=85"
-                    alt="Paus Sirip">
-
-                    <div class="tag">
-                        GIANT
-                    </div>
-
-                </div>
-
-                <div class="card-content">
-
-                    <h3>Paus Sirip</h3>
-
-                    <div class="latin">
-                        Balaenoptera physalus
-                    </div>
-
-                    <p class="card-description">
-                        Paus berukuran besar dengan tubuh panjang
-                        dan ramping yang membuatnya tampak elegan.
-                    </p>
-
-                    <div class="card-bottom">
-
-                        <div class="price">
-                            <small>SIMULASI</small>
-                            <strong>Rp 849.000</strong>
-                        </div>
-
-                        <a
-                        href="https://wa.me/6287840112123?text=Halo%20Iwak%20Paus%2C%20saya%20ingin%20bertanya%20tentang%20Paus%20Sirip."
-                        target="_blank"
-                        class="wa">
-                            💬 Tanya Info
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- CARD 6 -->
-
-            <div class="card">
-
-                <div class="image-box">
-
-                    <img
-                    src="https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=900&q=85"
-                    alt="Paus Abu-Abu">
-
-                    <div class="tag">
-                        MIGRATION
-                    </div>
-
-                </div>
-
-                <div class="card-content">
-
-                    <h3>Paus Abu-Abu</h3>
-
-                    <div class="latin">
-                        Eschrichtius robustus
-                    </div>
-
-                    <p class="card-description">
-                        Dikenal karena perjalanan migrasinya yang
-                        panjang melewati perairan berbagai wilayah.
-                    </p>
-
-                    <div class="card-bottom">
-
-                        <div class="price">
-                            <small>SIMULASI</small>
-                            <strong>Rp 749.000</strong>
-                        </div>
-
-                        <a
-                        href="https://wa.me/6287840112123?text=Halo%20Iwak%20Paus%2C%20saya%20ingin%20bertanya%20tentang%20Paus%20Abu-Abu."
-                        target="_blank"
-                        class="wa">
-                            💬 Tanya Info
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         TENTANG
-    ========================= -->
-
-    <section id="tentang">
-
-        <div class="info-section">
-
-            <div class="info-box">
-
-                <h2>
-                    About Iwak Paus 🌊
-                </h2>
+                <h3>Blue Whale</h3>
 
                 <p>
-                    Iwak Paus adalah konsep katalog digital
-                    bertema kehidupan laut yang dibuat dengan
-                    nuansa modern dan aesthetic. Website ini
-                    bertujuan untuk memperkenalkan berbagai
-                    spesies paus secara menarik dan informatif.
-                    Harga yang ditampilkan hanyalah simulasi
-                    untuk kebutuhan desain dan pembelajaran
-                    HTML, bukan harga jual satwa sungguhan.
+                    Koleksi paus biru untuk katalog
+                    edukasi bertema laut.
                 </p>
+
+                <div class="price">
+                    Rp 2.500.000
+                </div>
+
+                <button
+                    class="add-btn"
+                    onclick="addToCart('Blue Whale', 2500000)">
+                    + Tambah
+                </button>
 
             </div>
 
         </div>
 
-    </section>
+
+        <!-- PRODUK 2 -->
+        <div class="card">
+
+            <div class="card-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1559825481-12a05cc00344?auto=format&fit=crop&w=800&q=80"
+                    alt="Paus Laut">
+
+            </div>
+
+            <div class="card-content">
+
+                <span class="tag">
+                    OCEAN
+                </span>
+
+                <h3>Humpback Whale</h3>
+
+                <p>
+                    Koleksi bertema paus bungkuk
+                    dengan nuansa ocean blue.
+                </p>
+
+                <div class="price">
+                    Rp 1.850.000
+                </div>
+
+                <button
+                    class="add-btn"
+                    onclick="addToCart('Humpback Whale', 1850000)">
+                    + Tambah
+                </button>
+
+            </div>
+
+        </div>
 
 
+        <!-- PRODUK 3 -->
+        <div class="card">
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+            <div class="card-img">
 
-    <footer>
+                <img
+                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80"
+                    alt="Whale">
 
-        <strong>IWAK PAUS 🐋</strong>
+            </div>
 
-        <br>
+            <div class="card-content">
 
-        Explore • Discover • Protect The Ocean
+                <span class="tag">
+                    NEW
+                </span>
 
-        <br>
+                <h3>Ocean Whale</h3>
 
-        © 2026 Iwak Paus — Ocean Collection
+                <p>
+                    Koleksi visual paus dengan
+                    suasana laut dalam.
+                </p>
 
-    </footer>
+                <div class="price">
+                    Rp 2.100.000
+                </div>
 
+                <button
+                    class="add-btn"
+                    onclick="addToCart('Ocean Whale', 2100000)">
+                    + Tambah
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUK 4 -->
+        <div class="card">
+
+            <div class="card-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&w=800&q=80"
+                    alt="Whale Ocean">
+
+            </div>
+
+            <div class="card-content">
+
+                <span class="tag">
+                    PREMIUM
+                </span>
+
+                <h3>Deep Ocean Whale</h3>
+
+                <p>
+                    Koleksi premium bertema
+                    ekosistem laut dalam.
+                </p>
+
+                <div class="price">
+                    Rp 3.250.000
+                </div>
+
+                <button
+                    class="add-btn"
+                    onclick="addToCart('Deep Ocean Whale', 3250000)">
+                    + Tambah
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INFO TOKO -->
+<section id="info">
+
+    <div class="section-title">
+
+        <h2>About Our Store</h2>
+
+        <p>
+            Kenali Iwak Paus lebih dekat.
+        </p>
+
+    </div>
+
+
+    <div class="info">
+
+        <div class="info-box">
+
+            <h3>🌊 Tentang Toko</h3>
+
+            <p>
+                Iwak Paus merupakan konsep toko online
+                bertema kehidupan laut yang dibuat dengan
+                desain modern dan aesthetic.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>📍 Lokasi</h3>
+
+            <p>
+                Ocean Avenue No. 08<br>
+                Blue Sea District
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>🕐 Jam Operasional</h3>
+
+            <p>
+                Senin - Jumat<br>
+                08.00 - 20.00 WIB
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>💬 Customer Service</h3>
+
+            <p>
+                Hubungi kami melalui WhatsApp
+                untuk pertanyaan mengenai katalog.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CART -->
+<div class="cart" id="cart">
+
+    <div class="cart-header">
+
+        <h2>🛒 Keranjang</h2>
+
+        <button
+            class="close"
+            onclick="closeCart()">
+            ✕
+        </button>
+
+    </div>
+
+
+    <div id="cartItems">
+
+        <p style="color:#78909c">
+            Keranjang masih kosong.
+        </p>
+
+    </div>
+
+
+    <div class="cart-bottom">
+
+        <div class="total">
+
+            <span>Total</span>
+
+            <span id="cartTotal">
+                Rp 0
+            </span>
+
+        </div>
+
+
+        <button
+            class="checkout"
+            onclick="checkout()">
+
+            Checkout
+
+        </button>
+
+
+        <!-- GANTI NOMOR INI -->
+        <a
+            class="wa"
+            href="https://wa.me/6287840112123"
+            target="_blank">
+
+            💬 Chat WhatsApp
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+
+    © 2026 Iwak Paus Ocean Store
+    <br><br>
+
+    <small>
+        Website demo / project HTML5 bertema kehidupan laut.
+    </small>
+
+</footer>
+
+
+<script>
+
+    let cart = [];
+
+
+    /* TAMBAH KE KERANJANG */
+
+    function addToCart(name, price) {
+
+        const existing = cart.find(
+            item => item.name === name
+        );
+
+        if (existing) {
+
+            existing.qty++;
+
+        } else {
+
+            cart.push({
+                name: name,
+                price: price,
+                qty: 1
+            });
+
+        }
+
+        updateCart();
+
+        openCart();
+    }
+
+
+    /* UPDATE CART */
+
+    function updateCart() {
+
+        const cartItems =
+            document.getElementById("cartItems");
+
+        const cartCount =
+            document.getElementById("cartCount");
+
+        const cartTotal =
+            document.getElementById("cartTotal");
+
+
+        cartItems.innerHTML = "";
+
+        let total = 0;
+        let count = 0;
+
+
+        if (cart.length === 0) {
+
+            cartItems.innerHTML = `
+                <p style="color:#78909c">
+                    Keranjang masih kosong.
+                </p>
+            `;
+
+        }
+
+
+        cart.forEach((item, index) => {
+
+            total += item.price * item.qty;
+
+            count += item.qty;
+
+
+            cartItems.innerHTML += `
+
+                <div class="cart-item">
+
+                    <div>
+
+                        <h4>
+                            ${item.name}
+                        </h4>
+
+                        <p>
+                            Rp ${item.price.toLocaleString("id-ID")}
+                        </p>
+
+                    </div>
+
+
+                    <div class="qty">
+
+                        <button
+                            onclick="changeQty(${index}, -1)">
+                            −
+                        </button>
+
+                        <span>
+                            ${item.qty}
+                        </span>
+
+                        <button
+                            onclick="changeQty(${index}, 1)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+
+        cartCount.innerText = count;
+
+        cartTotal.innerText =
+            "Rp " + total.toLocaleString("id-ID");
+
+    }
+
+
+    /* UBAH JUMLAH */
+
+    function changeQty(index, amount) {
+
+        cart[index].qty += amount;
+
+
+        if (cart[index].qty <= 0) {
+
+            cart.splice(index, 1);
+
+        }
+
+
+        updateCart();
+
+    }
+
+
+    /* BUKA CART */
+
+    function openCart() {
+
+        document
+            .getElementById("cart")
+            .classList.add("active");
+
+    }
+
+
+    /* TUTUP CART */
+
+    function closeCart() {
+
+        document
+            .getElementById("cart")
+            .classList.remove("active");
+
+    }
+
+
+    /* CHECKOUT */
+
+    function checkout() {
+
+        if (cart.length === 0) {
+
+            alert(
+                "Keranjang kamu masih kosong!"
+            );
+
+            return;
+
+        }
+
+
+        let message =
+            "Halo Iwak Paus! Saya ingin melakukan checkout:%0A%0A";
+
+
+        let total = 0;
+
+
+        cart.forEach(item => {
+
+            const subtotal =
+                item.price * item.qty;
+
+            total += subtotal;
+
+
+            message +=
+                `🐋 ${item.name} x${item.qty} = Rp ${subtotal.toLocaleString("id-ID")}%0A`;
+
+        });
+
+
+        message +=
+            `%0A💰 Total: Rp ${total.toLocaleString("id-ID")}`;
+
+
+        window.open(
+            "https://wa.me/6287840112123?text=" + message,
+            "_blank"
+        );
+
+    }
+
+
+    updateCart();
+
+</script>
 
 </body>
-    </html>
+                    </html>
